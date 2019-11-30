@@ -1,0 +1,39 @@
+<%- include('header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2> Stílusok</h2>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Név</th>
+                    <th scope="col">Darab</th>
+
+                </tr>
+
+                </thead>
+                <tbody>
+
+                    <% styles.forEach(function(stylesItem){ %>
+                        <tr>
+                            <td> <%= stylesItem.nev %> </td>
+                            <td style="width:30px;white-space: nowrap">
+                                <a href="/style/<%= stylesItem._id %>" class="btn btn-sm btn-success">Zeneszámok</a>
+                                <a href="/style/edit/<%= stylesItem._id %>" class="btn btn-sm btn-primary"><i
+                                            class="far fa-edit"></i></a>
+                                <a href="/styles/delete/<%= stylesItem._id %>" class="btn btn-sm btn-danger"><i
+                                            class="far fa-trash-alt"></i></a>
+                            </td>
+
+                        </tr>
+                    <%   });%>
+                </tbody>
+
+            </table>
+            <br/>
+            <a href = "/styles/new" class="btn btn-block btn-primary">Új stílus hozzáadása</a>
+        </div>
+    </div>
+</div>
+
+<%-include('footer')-%>

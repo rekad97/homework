@@ -1,0 +1,32 @@
+<%- include('header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2> Stílus
+                <% if (typeof style === 'undefined') { %>
+                    létrehozás
+                <% }else { %>
+                    módosítás
+                <% } %>
+            </h2>
+
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="nev">Név</label>
+                    <input type="text" class="form-control" id="nev" name="nev"
+                           value="<%= (typeof style === 'undefined') ? '' : style.nev %>">
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Mentés"/>
+                <a class="btn btn-link" href="/style">Mégsem</a>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<%- include('footer') -%>

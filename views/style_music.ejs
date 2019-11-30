@@ -1,0 +1,28 @@
+<%- include('header') -%>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2><%styles.nev%>hez tartozó zenék:</h2>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Előadó</th>
+                    <th>Cím</th>
+                    <th>Lejátszás </th>
+                    <th>Megjegyzések</th>
+                    <th>Stílus</th>
+                </tr>
+                <% musics.forEach(function (musicItem){ %>
+                    <tr>
+                        <td><%= musicItem.eloado%></td>
+                        <td><%= musicItem.cim%></td>
+                        <td></td>
+                        <td><%= musicItem.megjegyzes%></td>
+                        <td><%= musicItem._stilus%></td>
+
+                    </tr>
+
+               <% });%>
+            </table>
+        </div>
+    </div>
+</div>

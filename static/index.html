@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zenelejátszó</title>
+</head>
+<body>
+<section id = "table">
+    <h1 id = "title">Zenelejátszó</h1>
+    <table id = _table>
+        <thead>
+        <tr>
+            <th scope ="col">Előadó</th>
+            <th scope = "col">Cím</th>
+            <th scope = "col">Lejátszás </th>
+            <th scope = "col">Törlés </th>
+            <th scope = "col">Megjegyzések</th>
+            <th scope = "col">Stílus</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+            <td>Kowalsky meg a vega</td>
+            <td>Lehetetlen</td>
+            <td><audio controls><source src = "./Kowalsky meg a  Vega x Lotfi Begi - Lehetetlen (avagy Velünk kerek a világ).mp3"></audio> </td>
+            <td><img id = "delete" src = "./delete.png" width = 72 height = 54> </td>
+            <td>Jó szám</td>
+            <td>Pop</td>
+        </tr>
+        <tr>
+            <!--<td><input type = "text" name = "second" id = "second"</td>-->
+        </tr>
+
+        </tbody>
+
+    </table>
+</section>
+<button type = "button" name = "new_music" id = "new_music" onclick = "window.location.href = 'music_new_edit.html'">Új zene hozzáadása</button>
+<button type = "button" name = "edit" id = "edit" onclick = "window.location.href = 'style_edit_new.html'">Szerkesztés</button>
+<button type = "button" name = "styles" id = "styles" onclick = "window.location.href = 'styles.html'">Stílusok</button>
+<button type = "button" name = "filter" id = "filter" onclick = "window.location.href = 'styles.html'">Szűrés(stílus alapján)</button>
+<script src = "./zenelejatszo.js"></script>
+</body>
+</HTML>

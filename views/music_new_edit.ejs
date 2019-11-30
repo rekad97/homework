@@ -1,0 +1,51 @@
+<%- include('header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2> Zeneszám
+                <% if (typeof music === 'undefined') { %>
+                    létrehozás
+                <% }else { %>
+                    módosítás
+                <% } %>
+            </h2>
+
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="eloado">Előadó</label>
+                    <input type="text" class="form-control" id="eloado" name="eloado"
+                           value="<%= (typeof music === 'undefined') ? '' : music.eloado %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="cim">Cím</label>
+                    <input type="text" class="form-control" id="cim" name="cim"
+                           value="<%= (typeof music === 'undefined') ? '' : music.cim %>">
+                </div>
+
+                <div class="form-group">
+                    <label for="megjegyzes">Megjegyzések</label>
+                    <textarea class="form-control" id="megjegyzes" name="megjegyzes"
+                              value="<%= (typeof music === 'undefined') ? '' : music.megjegyzes %>"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="stilus">Stílus</label>
+                    <input type="text" class="form-control" id="stilus" name="cim"
+                           value="<%= (typeof music === 'undefined') ? '' : music._stilus %>">
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Mentés" href ="/style"/>
+                <a class="btn btn-link" href="/music/new">Mégsem</a>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<%-include('footer')-%>
