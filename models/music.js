@@ -5,9 +5,10 @@ const Music    = db.model('Music', {
     eloado: String,
     cim: String,
     megjegyzes: String,
+    lejatszas: String,
     _stilus: {
-        type: Schema.Types.ObjectId,
-        ref: 'Style'
+        type: Schema.Types.String,
+
     }
 });
 

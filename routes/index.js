@@ -50,7 +50,7 @@ module.exports = function(app){
         getStylesMW(objectRepo),
         renderMW(objectRepo, 'styles')
     );
-  app.get('/style/:style_id',
+  app.get('/style/:stylenev',
       getStyleMW(objectRepo),
       getMusicsMW(objectRepo),
       renderMW(objectRepo, 'style_music')

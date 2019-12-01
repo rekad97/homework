@@ -8,13 +8,15 @@ module.exports = function (objectRepo){
         if(typeof res.locals.style === 'undefined'){
             return next();
         }
-        modelOfMusics.find({_stilus: res.locals.style._id}, (err, musics) => {
+        modelOfMusics.find( (err, musics) => {
             if(err) {
                 return next({err: err});
-            }
 
+
+            }
             res.locals.musics = musics;
             return next();
+
         });
     };
 };

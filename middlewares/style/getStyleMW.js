@@ -3,7 +3,7 @@ const requireOption = require('../requireOption');
 module.exports = function (objectRepo){
     const modelOfStyles = requireOption(objectRepo, 'modelOfStyles');
     return function(req, res, next) {
-        modelOfStyles.findOne({_id: req.params.styleid}, (err, style) => {
+        modelOfStyles.findOne({nev: req.params.stylenev}, (err, style) => {
             if (err || !style) {
                 return next({err: err});
             }

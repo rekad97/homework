@@ -6,8 +6,8 @@ module.exports = function (objectRepo){
         if(
             typeof req.body.eloado === 'undefined' ||
             typeof req.body.cim === 'undefined' ||
-            typeof req.body.megjegyzes === 'undefined' ||
-            typeof res.locals.style === 'undefined'
+            typeof req.body.megjegyzes === 'undefined'
+            //typeof res.locals._stilus === 'undefined'
         ){
             return next();
         }
@@ -18,14 +18,17 @@ module.exports = function (objectRepo){
 
         res.locals.music.eloado = req.body.eloado;
         res.locals.music.cim = req.body.cim;
+        res.locals.music.lejatszas = req.body.lejatszas;
         res.locals.music.megjegyzes = req.body.megjegyzes;
-        res.locals.music._stilus = res.locals.styles._id;
+
+        res.locals.music._stilus = req.body._stilus;
 
         res.locals.music.save(err => {
             if(err){
                 return next({err: err});
             }
-            return res.redirect(`/style/${res.locals.styles._id}`);
+            return res.redirect("/style");
+            //return res.redirect(`/style/${res.locals.styles._id}`);
         });
 
 

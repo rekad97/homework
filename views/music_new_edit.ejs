@@ -26,6 +26,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="lejatszas">Lejátszás</label>
+                    <input type="text" class="form-control" id="lejatszas" name="lejatszas"
+                           value="<%= (typeof music === 'undefined') ? '' : music.lejatszas %>">
+                </div>
+
+                <div class="form-group">
                     <label for="megjegyzes">Megjegyzések</label>
                     <textarea class="form-control" id="megjegyzes" name="megjegyzes"
                               value="<%= (typeof music === 'undefined') ? '' : music.megjegyzes %>"></textarea>
@@ -33,11 +39,11 @@
 
                 <div class="form-group">
                     <label for="stilus">Stílus</label>
-                    <input type="text" class="form-control" id="stilus" name="cim"
+                    <input type="text" class="form-control" id="stilus" name="style"
                            value="<%= (typeof music === 'undefined') ? '' : music._stilus %>">
                 </div>
 
-                <input type="submit" class="btn btn-primary" value="Mentés" href ="/style"/>
+                <input type="submit" class="btn btn-primary" value="Mentés" />
                 <a class="btn btn-link" href="/music/new">Mégsem</a>
 
             </form>
