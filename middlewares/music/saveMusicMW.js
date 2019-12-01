@@ -21,7 +21,7 @@ module.exports = function (objectRepo){
         res.locals.music.lejatszas = req.body.lejatszas;
         res.locals.music.megjegyzes = req.body.megjegyzes;
 
-        res.locals.music._stilus = req.body._stilus;
+        res.locals.music.stilus = req.body.style;
 
         res.locals.music.save(err => {
             if(err){

@@ -6,10 +6,7 @@ const Music    = db.model('Music', {
     cim: String,
     megjegyzes: String,
     lejatszas: String,
-    _stilus: {
-        type: Schema.Types.String,
-
-    }
+    stilus: String
 });
 
 module.exports = Music;

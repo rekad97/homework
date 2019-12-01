@@ -8,7 +8,7 @@ module.exports = function (objectRepo){
         if(typeof res.locals.style === 'undefined'){
             return next();
         }
-        modelOfMusics.find( (err, musics) => {
+        modelOfMusics.find({stilus: req.params.stylenev}, (err, musics) => {
             if(err) {
                 return next({err: err});
 
