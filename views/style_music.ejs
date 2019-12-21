@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2><%=style.nev%>hez tartozó zenék:</h2>
+            <h2><%=style.nev%> stílushoz tartozó zenék:</h2>
             <table class="table table-striped table-bordered">
                 <tr>
                     <th>Előadó</th>
@@ -19,9 +19,16 @@
                         <td><%= musicItem.megjegyzes%></td>
                         <td><%= musicItem.stilus%></td>
 
+                        <td style="width:30px;white-space: nowrap">
+                            <a href="/music/edit/<%= musicItem._id %>" class="btn btn-sm btn-primary"><i
+                                        class="far fa-edit"></i></a>
+                            <a href="/music/delete/<%= musicItem._id %>" class="btn btn-sm btn-danger"><i
+                                        class="far fa-trash-alt"></i></a>
+                        </td>
+
                     </tr>
 
-               <% });%>
+                <% });%>
             </table>
         </div>
     </div>

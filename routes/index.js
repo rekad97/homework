@@ -31,44 +31,51 @@ module.exports = function(app){
   }
 
 
-    app.use('/music/new',
-        saveMusicMW(objectRepo),
-        renderMW(objectRepo, 'music_new_edit')
-    );
+  app.use('/music/new',
+      saveMusicMW(objectRepo),
+      renderMW(objectRepo, 'music_new_edit')
+  );
 
-    app.use('/music/edit/:music_id',
-        getMusicMW(objectRepo),
-        saveMusicMW(objectRepo),
-        renderMW(objectRepo, 'music_new_edit')
-    );
-    app.get('/main',
-        getMusicsMW(objectRepo),
-        orderByMW(objectRepo),
-        renderMW(objectRepo, 'index')
-    );
-    app.get('/style',
-        getStylesMW(objectRepo),
-        renderMW(objectRepo, 'styles')
-    );
+  app.use('/music/edit/:music_id',
+      getMusicMW(objectRepo),
+      saveMusicMW(objectRepo),
+      renderMW(objectRepo, 'music_new_edit')
+  );
+  app.use('/style/edit/:style_id',
+      getStyleMW(objectRepo),
+      saveStyleMW(objectRepo),
+      renderMW(objectRepo, 'music_new_edit')
+  );
+  app.get('/main',
+      getMusicsMW(objectRepo),
+      orderByMW(objectRepo),
+      renderMW(objectRepo, 'index')
+  );
+  app.get('/style',
+      getStylesMW(objectRepo),
+      renderMW(objectRepo, 'styles')
+  );
   app.get('/style/:stylenev',
       getStyleMW(objectRepo),
       getMusicsMW(objectRepo),
       renderMW(objectRepo, 'style_music')
   );
-    app.use('/styles/new',
-        //getStylesMW(objectRepo),
-        saveStyleMW(objectRepo),
-        renderMW(objectRepo, 'style_edit_new')
-    );
+  app.use('/styles/new',
+      //getStylesMW(objectRepo),
+      saveStyleMW(objectRepo),
+      renderMW(objectRepo, 'style_edit_new')
+  );
 
-    app.get('/music/delete/:music_id',
-        getMusicMW(objectRepo),
-        deleteMusicMW(objectRepo),
-        renderMW(objectRepo, 'style_edit_new')
-    );
+  app.get('/music/delete/:music_id',
+      getMusicMW(objectRepo),
+      deleteMusicMW(objectRepo),
+      renderMW(objectRepo, 'style_edit_new')
+  );
 
-    app.get('/music/delete/:style_id',
-        getStylesMW(objectRepo),
-        deleteStyleMW(objectRepo)
-    );
+  app.get('/style/delete/:style_id',
+      getStyleMW(objectRepo),
+      deleteStyleMW(objectRepo),
+
+  );
+
 };

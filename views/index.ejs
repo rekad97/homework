@@ -1,43 +1,9 @@
 <%- include('header') %>
-<section id="table">
-    <h1 id="title">Zenelejátszó</h1>
-    <table class="table table-striped table-bordered" id="_table">
-        <thead>
-        <tr>
-            <th scope="col">Előadó</th>
-            <th scope="col">Cím</th>
-            <th scope="col">Lejátszás</th>
-            <th scope="col">Törlés</th>
-            <th scope="col">Megjegyzések</th>
-            <th scope="col">Stílus</th>
-        </tr>
+<h1 id="title">Zenelejátszó</h1>
 
-        </thead>
-        <tbody>
-        <tr>
-            <td>Kowalsky meg a vega</td>
-            <td>Lehetetlen</td>
-            <td>
-                <audio controls>
-                    <source src="../sources/Kowalsky meg a Vega x Lotfi Begi - Lehetetlen nincs - VELÜNK KEREK A VILÁG!.mp3">
-                </audio>
-            </td>
-            <td><img id="delete" src="./delete.png" width=72 height=54></td>
-            <td>Jó szám</td>
-            <td>Pop</td>
-        </tr>
-        <tr>
-            <!--<td><input type = "text" name = "second" id = "second"</td>-->
-        </tr>
-
-        </tbody>
-
-    </table>
-</section>
 <button type="button" name="new_music" id="new_music" onclick="window.location.href = '/music/new'">Új zene
     hozzáadása
 </button>
-<button type="button" name="edit" id="edit" onclick="window.location.href = '/music/style/new'">Szerkesztés</button>
 <button type="button" name="styles" id="styles" onclick="window.location.href = '/style'">Stílusok</button>
 
 <%-include('footer')-%>
