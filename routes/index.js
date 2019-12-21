@@ -36,11 +36,16 @@ module.exports = function(app){
       renderMW(objectRepo, 'music_new_edit')
   );
 
-  app.use('/music/edit/:music_id',
+  app.get('/music/edit/:music_id',
       getMusicMW(objectRepo),
-      saveMusicMW(objectRepo),
       renderMW(objectRepo, 'music_new_edit')
   );
+
+  app.post('/music/edit/:music_id',
+      getMusicMW(objectRepo),
+      saveMusicMW(objectRepo)
+  );
+
   app.use('/style/edit/:style_id',
       getStyleMW(objectRepo),
       saveStyleMW(objectRepo),
