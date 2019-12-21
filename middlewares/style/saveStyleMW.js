@@ -20,10 +20,12 @@ module.exports = function (objectRepo){
                 return next({err: err});
             }
 
-            res.locals.musics.forEach(music => {
-               music.stilus = req.body.nev;
-               music.save();
-            });
+            if(res.locals.musics) {
+                res.locals.musics.forEach(music => {
+                    music.stilus = req.body.nev;
+                    music.save();
+                });
+            }
 
             return res.redirect('/style');
         });
