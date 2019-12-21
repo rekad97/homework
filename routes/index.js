@@ -46,11 +46,17 @@ module.exports = function(app){
       saveMusicMW(objectRepo)
   );
 
-  app.use('/style/edit/:style_id',
+  app.get('/style/edit/:stylenev',
       getStyleMW(objectRepo),
-      saveStyleMW(objectRepo),
-      renderMW(objectRepo, 'music_new_edit')
+      renderMW(objectRepo, 'style_edit_new')
   );
+
+  app.post('/style/edit/:stylenev',
+      getStyleMW(objectRepo),
+      getMusicsMW(objectRepo),
+      saveStyleMW(objectRepo)
+  );
+
   app.get('/main',
       getMusicsMW(objectRepo),
       orderByMW(objectRepo),
