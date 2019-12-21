@@ -11,7 +11,7 @@ module.exports = function (objectRepo){
                 return next({err: err});
             }
 
-            return res.redirect(`/music/${res.locals.style_id}`)
+            return res.redirect(`/style/${res.locals.music.stilus}`)
         });
     };
 };

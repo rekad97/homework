@@ -28,7 +28,7 @@ module.exports = function(app){
   const objectRepo = {
     modelOfMusics: modelOfMusics,
     modelOfStyles: modelOfStyles,
-  }
+  };
 
 
   app.use('/music/new',
@@ -72,7 +72,7 @@ module.exports = function(app){
       renderMW(objectRepo, 'style_edit_new')
   );
 
-  app.get('/style/delete/:style_id',
+  app.get('/style/delete/:stylenev',
       getStyleMW(objectRepo),
       deleteStyleMW(objectRepo),
 

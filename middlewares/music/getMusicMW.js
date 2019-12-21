@@ -6,7 +6,7 @@ module.exports = function (objectRepo) {
     return function (req, res, next) {
         modelOfMusics.findOne(
             {
-                _id: req.params.musicid
+                _id: req.params.music_id
             },
 
             (err, music) => {
